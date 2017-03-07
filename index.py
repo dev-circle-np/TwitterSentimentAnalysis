@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Mar  6 21:33:20 2017
-
-@author: Toast
-"""
 from keys import consumer_key, consumer_secret, access_token, access_token_secret
 from tweepy.streaming import StreamListener
 from tweepy import Stream, OAuthHandler
@@ -27,4 +21,4 @@ if __name__ == '__main__':
     auth.set_access_token(access_token, access_token_secret)
     
     stream = Stream(auth, listener)
-    stream.filter(track = ['Trump'])
+    stream.filter(track = ['']) #Add any word you wanna see the sentiment analysis of 
