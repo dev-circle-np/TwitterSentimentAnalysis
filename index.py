@@ -1,4 +1,5 @@
-from keys import consumer_key, consumer_secret, access_token, access_token_secret
+from keys import consumer_key, consumer_secret
+from keys import access_token, access_token_secret
 from tweepy.streaming import StreamListener
 from tweepy import Stream, OAuthHandler
 from textblob import TextBlob
@@ -20,5 +21,8 @@ if __name__ == '__main__':
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
     
+    key = input('Enter a word to find its sentiment ')
+    
     stream = Stream(auth, listener)
-    stream.filter(track = ['']) #Add any word you wanna see the sentiment analysis of 
+    stream.filter(track = [key]) #Add any word you wanna see the sentiment 
+                                 #analysis of 
